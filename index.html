@@ -13,14 +13,18 @@
         <div class="diya">🪔</div>
         <div>
           <h1>Family Feud — Diwali Party</h1>
-          <div class="subtitle">Fun Party • Modern Minimal</div>
+          <div class="subtitle">Modern • Minimal • Party-ready</div>
         </div>
       </div>
       <div class="controls">
         <button id="hostBtn" class="btn">Host</button>
         <button id="playerBtn" class="btn ghost">Player</button>
+        <button id="copyLinkBtn" class="btn ghost">Copy Player Link</button>
+        <button id="exportBtn" class="btn ghost">Export</button>
+        <button id="importBtn" class="btn ghost">Import</button>
       </div>
     </header>
+
     <main>
       <section id="setup" class="panel">
         <h2>Game Setup</h2>
@@ -32,16 +36,26 @@
           <button id="randomQBtn" class="btn ghost">Random Question</button>
         </div>
       </section>
+
+      <section id="questionsPanel" class="panel">
+        <h2>Questions</h2>
+        <div id="questionsList"></div>
+      </section>
+
       <section id="hostScreen" class="panel hidden">
         <h2>Host Screen</h2>
-        <div id="currentQuestionTitle" class="question-title">No question selected</div>
-        <div id="answersGrid" class="answers-grid"></div>
-        <div class="row">
-          <button id="revealAllBtn" class="btn">Reveal All</button>
-          <button id="nextQuestionBtn" class="btn ghost">Next Question</button>
+        <div class="host-controls">
+          <div id="currentQuestionTitle" class="question-title">No question selected</div>
+          <div id="answersGrid" class="answers-grid"></div>
+          <div class="host-actions">
+            <button id="revealAllBtn" class="btn">Reveal All</button>
+            <button id="nextQuestionBtn" class="btn ghost">Next Question</button>
+            <button id="resetRoundBtn" class="btn ghost">Reset Round</button>
+          </div>
         </div>
         <div class="scoreboard" id="scoreboardHost"></div>
       </section>
+
       <section id="playerScreen" class="panel hidden">
         <h2>Player Screen</h2>
         <div id="playerQuestionTitle" class="question-title">Waiting for host...</div>
@@ -49,11 +63,14 @@
         <div class="scoreboard" id="scoreboardPlayer"></div>
       </section>
     </main>
+
+    <footer class="footer">
+      <div>Made for Diwali parties • Modern Minimal theme</div>
+      <div class="small">Tip: Host can click "Copy Player Link" and share it — player screens will load the player view. For live sync across devices, see README to enable Firebase.</div>
+    </footer>
   </div>
 
-  <audio id="buzzer" src="sounds/buzzer.mp3"></audio>
-  <audio id="ding" src="sounds/ding.mp3"></audio>
-  <audio id="applause" src="sounds/applause.mp3"></audio>
+  <input id="fileInput" type="file" accept=".json" style="display:none" />
 
   <script src="app.js"></script>
 </body>
