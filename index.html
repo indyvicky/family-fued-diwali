@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Family Feud — Diwali Party</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="title">
+        <div class="diya">🪔</div>
+        <div>
+          <h1>Family Feud — Diwali Party</h1>
+          <div class="subtitle">Fun Party • Modern Minimal</div>
+        </div>
+      </div>
+      <div class="controls">
+        <button id="hostBtn" class="btn">Host</button>
+        <button id="playerBtn" class="btn ghost">Player</button>
+      </div>
+    </header>
+    <main>
+      <section id="setup" class="panel">
+        <h2>Game Setup</h2>
+        <label>Teams (2–7): <input id="teamCount" type="number" min="2" max="7" value="2"></label>
+        <div id="teamsEditor"></div>
+        <div class="row">
+          <button id="saveTeams" class="btn">Save Teams</button>
+          <button id="newQuestionBtn" class="btn ghost">Add Question</button>
+          <button id="randomQBtn" class="btn ghost">Random Question</button>
+        </div>
+      </section>
+      <section id="hostScreen" class="panel hidden">
+        <h2>Host Screen</h2>
+        <div id="currentQuestionTitle" class="question-title">No question selected</div>
+        <div id="answersGrid" class="answers-grid"></div>
+        <div class="row">
+          <button id="revealAllBtn" class="btn">Reveal All</button>
+          <button id="nextQuestionBtn" class="btn ghost">Next Question</button>
+        </div>
+        <div class="scoreboard" id="scoreboardHost"></div>
+      </section>
+      <section id="playerScreen" class="panel hidden">
+        <h2>Player Screen</h2>
+        <div id="playerQuestionTitle" class="question-title">Waiting for host...</div>
+        <div id="playerAnswersGrid" class="answers-grid"></div>
+        <div class="scoreboard" id="scoreboardPlayer"></div>
+      </section>
+    </main>
+  </div>
+
+  <audio id="buzzer" src="sounds/buzzer.mp3"></audio>
+  <audio id="ding" src="sounds/ding.mp3"></audio>
+  <audio id="applause" src="sounds/applause.mp3"></audio>
+
+  <script src="app.js"></script>
+</body>
+</html>
